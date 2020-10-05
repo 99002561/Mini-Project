@@ -11,9 +11,9 @@ class Moviedb {
     int countAll();
     int countMovieByDirector(std::string);
     void removeMovie(std::string);
-   // double IsInox();
-    //double IsPVPPVR();
-   // double IsOthers();
+    double IsInox();
+    double IsPVPPVR();
+    double IsOthers();
 
 };
 

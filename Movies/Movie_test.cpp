@@ -40,7 +40,7 @@ class Movie_test : public ::testing::Test {
    		 ++iter;
     		for(;iter!=res.end();++iter)
     		{
-    			cout<<*iter<<endl;
+    			//cout<<*iter<<endl;
     			stringstream ss(*iter); 
     			while (ss.good()) 
     			{ 
@@ -93,7 +93,7 @@ class Movie_test : public ::testing::Test {
     void TearDown() {}
     Moviedb movies;
 };
-/*
+}
 
 TEST_F(Movie_test, findmovetitle) {
    
@@ -103,19 +103,18 @@ TEST_F(Movie_test, findmovetitle) {
     EXPECT_EQ("Sneha",iptr->getActress());
     EXPECT_EQ("Comedy",iptr->getSubject());
     
-}*/
-TEST_F(Movie_test, counttest) {
+}
+TEST_F(Movie_test, counttest) 
+{
     EXPECT_EQ(9, movies.countAll());
     }
     
-}
-/*
-TEST_F(MoviedbTest, RemoveTripTest) 
+TEST_F(Movie_test,removeMovie) 
 {
-    movies.removeMovie("abc");
-    EXPECT_EQ(NULL, movies.findMovieById("abc"));
-    EXPECT_EQ(0, movies.countAll());
+    movies.removeMovie("Mahesh");
+    EXPECT_EQ((Genre*)NULL, movies.findMovieBytitle("Mahesh"));
 }
+
 /*TEST_F(MovieDbTest, RemoveMovieTest) {
     trips.removeMovie("Raj");
     EXPECT_EQ(NULL, movies.findMovieById(Raj"));
@@ -123,8 +122,8 @@ TEST_F(MoviedbTest, RemoveTripTest)
 }
 TEST_F(FlightTripDbTest, CountTest) {             //Just After Setup
     EXPECT_EQ(6, trips.countAll());
-}
-TEST_F(FlightTripDbTest, CountByOperatorTest) {  //Just After Setup
-    int count = trips.countTripsByOperator("Indigo");
- 
 }*/
+TEST_F(Movie_test, countMovieByDirector) {  //Just After Setup
+    int count = movies.countMovieByDirector("Rajamouli");
+ 
+}

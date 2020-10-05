@@ -8,7 +8,6 @@ class Genre : public Movie {
    std::string title;
    int length;
    double rating;
-    // -lgtest -lgtest_main -lpthread
 
   public:
     Genre();
