@@ -19,5 +19,5 @@ jobs:
         sudo apt-get -y install libcunit1 libcunit1-doc libcunit1-dev 
     - name: make test
       run: |
-        g++ -C Movies/Movie_test.cpp
-        valgrind -C Movies/./all.out
+        g++  Movies/Movie_test.cpp
+        valgrind - Movies/./all.out
