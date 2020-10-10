@@ -20,4 +20,4 @@ jobs:
     - name: make test
       run: |
         make test -C Movies/
-        valgrind ./Movies
+        valgrind ./Movies/all.out
