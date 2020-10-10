@@ -1,0 +1,27 @@
+name: Unit Testing
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Install cmake
+      run: sudo apt-get install cmake
+    - name: Install C Unit
+      run: sudo apt-get install libgtest-dev && cd /usr/src/gtest && sudo cmake CMakeLists.txt && sudo make && sudo cp *.a /usr/lib && sudo ln -s /usr/lib/libgtest.a /usr/local/lib/libgtest.a && sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a
+    - uses: actions/checkout@v2
+    
+      
+    - name: make all
+      run:  make -C Movies/
+    - name: Change mode
+      run: cd Movies && chmod a+x all.out
+    - name: unit test
+      run: cd Movies && ./all.out
